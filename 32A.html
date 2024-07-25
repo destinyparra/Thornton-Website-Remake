@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+</head>
+<title> Thorntons CS Notes - An easier format to read </title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+    <section class="sub-header">
+        <nav>
+            <a href="index.html"><img src="images/uci-logo.png" class="logo"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+
+                <ul>
+                    <!-- nav links -->
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="course.html">COURSES</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="32A.html">32 NOTES</a></li>
+
+
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+
+        </nav>
+        <h1> Python 32A Notes</h1>
+
+    </section>
+
+    <!----- Footer ------>
+
+    <section class="campus">
+        <h1>Python Basics</h1>
+        <p> Types, objects, numbers, and arithmetic operators </p>
+
+        <div class="row">
+            <!--- Shortcut: div.campus col *tab* -->
+            <div class="campus-col">
+                <img src=" images/pythonmeme.png">
+                <div class="layer">
+                    <h3> Indention Sensitive</h3>
+
+                </div>
+            </div>
+            <div class="campus-col">
+                <img src=" images/pythonmeme2.jpeg">
+                <div class="layer">
+                    <h3>Always comment your code</h3>
+
+                </div>
+            </div>
+            <div class="campus-col">
+                <img src=" images/pythonmeme3.jpeg">
+                <div class="layer">
+                    <h3>Much easier than C++</h3>
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ----- 32 notes ----- -->
+
+    <body>
+        <section class="notes">
+
+            <h1>Division vs. integer division</h1>
+            <br>
+            <hr style="border-top: dotted 1px;" />
+
+            <br>
+            <p>
+                <b>Python supports two kinds of division: </b><br><br>
+
+                Division is performed by an operator <span class="highlight">/</span>(i.e., a single forward slash).
+                This kind of division
+                always yields a non-integer result, even when its operands
+                divide evenly.
+                Integer division or floor division is
+                performed by an operator <span class="highlight">//</span> (i.e., denoted by two forward slashes).
+                This kind of division always yields an integral result (though not always
+                an integer), in the sense that the
+                "floor" of the result is taken, with any fractional part being discarded.
+            </p>
+
+            <p>Let's explore the two kinds of division more carefully, taking note of the types of values we get back
+                from it, in addition to the values themselves. When used on two integers, the two division operators
+                work like this.</p>
+
+
+            <div class="row">
+                <div class="python-col">
+                    <pre class="language-python-shell" tabindex="0"><code class="language-python-shell">
+    <span class="token prompt important">&gt;&gt;&gt;</span> <span class="token number">12</span> <span class="token operator">/</span> <span class="token number">4</span>
+    <span class="token result italic">    3.0</span>
+    <span class="token prompt important">&gt;&gt;&gt;</span> <span class="token builtin">type</span><span class="token punctuation">(</span><span class="token number">12</span> <span class="token operator">/</span> <span class="token number">4</span><span class="token punctuation">)</span>
+    <span class="token result italic">    &lt;class 'float'&gt;</span>
+    <span class="token prompt important">&gt;&gt;&gt;</span> <span class="token number">11</span> <span class="token operator">/</span> <span class="token number">4</span>
+    <span class="token result italic">    2.75</span>
+    <span class="token prompt important">&gt;&gt;&gt;</span> <span class="token builtin">type</span><span class="token punctuation">(</span><span class="token number">11</span> <span class="token operator">/</span> <span class="token number">4</span><span class="token punctuation">)</span>
+    <span class="token result italic">    &lt;class 'float'&gt;</span>
+    <span class="token prompt important">&gt;&gt;&gt;</span> <span class="token number">12</span> <span class="token operator">//</span> <span class="token number">4</span>
+    <span class="token result italic">    3</span>
+    <span class="token prompt important">&gt;&gt;&gt;</span> <span class="token builtin">type</span><span class="token punctuation">(</span><span class="token number">12</span> <span class="token operator">//</span> <span class="token number">4</span><span class="token punctuation">)</span>
+    <span class="token result italic">    &lt;class 'int'&gt;</span>
+    <span class="token prompt important">&gt;&gt;&gt;</span> <span class="token number">11</span> <span class="token operator">//</span> <span class="token number">4</span>
+    <span class="token result italic">    2</span>
+    <span class="token prompt important">&gt;&gt;&gt;</span> <span class="token builtin">type</span><span class="token punctuation">(</span><span class="token number">11</span> <span class="token operator">//</span> <span class="token number">4</span><span class="token punctuation">)</span>
+    <span class="token result italic">    &lt;class 'int'&gt;</span>
+    </code></pre>
+                    <h3>Two Integers</h3>
+                    <p>We see that, when used on two integers, the division operator
+                    <p>We see that, when used on two integers, the division operator <span class="highlight">/</span>
+
+                        always returns a float; the integer division operator <span class="highlight">//</span>
+                        always returns an int. Let's see if that's true when we use
+                        them on two floats instead.</p>
+                </div>
+                <div class="python-col">
+                    <pre class="language-python-shell" tabindex="0"><code class="language-python-shell">
+    <span class="token prompt important">&gt;&gt;&gt;</span> <span class="token number">12.0</span> <span class="token operator">/</span> <span class="token number">4.0</span>
+    <span class="token result italic">    3.0</span>
+    <span class="token prompt important">&gt;&gt;&gt;</span> <span class="token builtin">type</span><span class="token punctuation">(</span><span class="token number">12.0</span> <span class="token operator">/</span> <span class="token number">4.0</span><span class="token punctuation">)</span>
+    <span class="token result italic">    &lt;class 'float'&gt;</span>
+    <span class="token prompt important">&gt;&gt;&gt;</span> <span class="token number">11.0</span> <span class="token operator">/</span> <span class="token number">4.0</span>
+    <span class="token result italic">    2.75</span>
+    <span class="token prompt important">&gt;&gt;&gt;</span> <span class="token builtin">type</span><span class="token punctuation">(</span><span class="token number">11.0</span> <span class="token operator">/</span> <span class="token number">4.0</span><span class="token punctuation">)</span>
+    <span class="token result italic">    &lt;class 'float'&gt;</span>
+    <span class="token prompt important">&gt;&gt;&gt;</span> <span class="token number">12.0</span> <span class="token operator">//</span> <span class="token number">4.0</span>
+    <span class="token result italic">    3.0</span>
+    <span class="token prompt important">&gt;&gt;&gt;</span> <span class="token builtin">type</span><span class="token punctuation">(</span><span class="token number">12.0</span> <span class="token operator">//</span> <span class="token number">4.0</span><span class="token punctuation">)</span>
+    <span class="token result italic">    &lt;class 'float'&gt;</span>
+    <span class="token prompt important">&gt;&gt;&gt;</span> <span class="token number">11.0</span> <span class="token operator">//</span> <span class="token number">4.0</span>
+    <span class="token result italic">    2.0</span>
+    <span class="token prompt important">&gt;&gt;&gt;</span> <span class="token builtin">type</span><span class="token punctuation">(</span><span class="token number">11.0</span> <span class="token operator">//</span> <span class="token number">4.0</span><span class="token punctuation">)</span>
+    <span class="token result italic">    &lt;class 'float'&gt;</span>
+    </code></pre>
+                    <h3>Two Floats</h3>
+                    <p>In this case, we get a float result using either of the division operators, the difference being
+                        that integer division <span class="highlight">//</span> gives us an integral result (i.e., a
+                        result with the fractional part discarded and replaced with
+                        <span class="highlight">.0</span>instead). The only other interesting question is what
+                        happens when we use floats with fractional parts other than <span class="highlight">.0</span>
+                    </p>
+                </div>
+                <div class="python-col">
+                    <pre class="language-python-shell" tabindex="0"><code class="language-python-shell">
+    <span class="token prompt important">&gt;&gt;&gt;</span> <span class="token number">12</span> <span class="token operator">/</span> <span class="token number">4</span>
+    <span class="token result italic">    3.0</span>
+    <span class="token prompt important">&gt;&gt;&gt;</span> <span class="token builtin">type</span><span class="token punctuation">(</span><span class="token number">12</span> <span class="token operator">/</span> <span class="token number">4</span><span class="token punctuation">)</span>
+    <span class="token result italic">    &lt;class 'float'&gt;</span>
+    <span class="token prompt important">&gt;&gt;&gt;</span> <span class="token number">11</span> <span class="token operator">/</span> <span class="token number">4</span>
+    <span class="token result italic">    2.75</span>
+    <span class="token prompt important">&gt;&gt;&gt;</span> <span class="token builtin">type</span><span class="token punctuation">(</span><span class="token number">11</span> <span class="token operator">/</span> <span class="token number">4</span><span class="token punctuation">)</span>
+    <span class="token result italic">    &lt;class 'float'&gt;</span>
+    <span class="token prompt important">&gt;&gt;&gt;</span> <span class="token number">12</span> <span class="token operator">//</span> <span class="token number">4</span>
+    <span class="token result italic">    3</span>
+    <span class="token prompt important">&gt;&gt;&gt;</span> <span class="token builtin">type</span><span class="token punctuation">(</span><span class="token number">12</span> <span class="token operator">//</span> <span class="token number">4</span><span class="token punctuation">)</span>
+    <span class="token result italic">    &lt;class 'int'&gt;</span>
+    <span class="token prompt important">&gt;&gt;&gt;</span> <span class="token number">11</span> <span class="token operator">//</span> <span class="token number">4</span>
+    <span class="token result italic">    2</span>
+    <span class="token prompt important">&gt;&gt;&gt;</span> <span class="token builtin">type</span><span class="token punctuation">(</span><span class="token number">11</span> <span class="token operator">//</span> <span class="token number">4</span><span class="token punctuation">)</span>
+    <span class="token result italic">    &lt;class 'int'&gt;</span>
+    </code></pre>
+                    <h3>The rules are:
+
+                    </h3>
+                    <p>
+                        Division of two integers yields a float
+                        Division of two floats yields a float
+                        Integer division of two integers yields an integer
+                        Integer division of two floats yields a float whose fractional part is <span
+                            class="highlight">.0</span>
+
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- ------ remainders ------ -->
+            <br><br>
+            <h1>Remainders</h1>
+            <br>
+            <hr style="border-top: dotted 1px;" />
+
+            <br>
+            <p>There is one additional wrinkle when it comes to division. Not only is there a way to perform integer
+                division, but there is also a way to obtain the <i>remainder</i> of that division, using the remainder
+                (also called <i>mod</i> or <i>modulo</i>) operator, which is denoted in Python by <span
+                    class="highlight">%</span>
+                . What this returns is the remainder left over after performing an
+                integer division, similar to how I originally learned about mathematical division a very long time ago
+                (before I had been taught about fractions or decimals).</p>
+            <div class="row">
+                <div class="python-col-2">
+                    <pre class="language-python-shell" tabindex="0"><code class="language-python-shell">
+
+            <span class="token prompt important">&gt;&gt;&gt;</span> <span class="token number">6</span> <span class="token operator">%</span> <span class="token number">3</span>
+            <span class="token result italic">    0</span>
+            <span class="token prompt important">&gt;&gt;&gt;</span> <span class="token number">7</span> <span class="token operator">%</span> <span class="token number">3</span>
+            <span class="token result italic">    1</span>
+            <span class="token prompt important">&gt;&gt;&gt;</span> <span class="token number">8</span> <span class="token operator">%</span> <span class="token number">3</span>
+            <span class="token result italic">    2</span>
+            <span class="token prompt important">&gt;&gt;&gt;</span> <span class="token number">9</span> <span class="token operator">%</span> <span class="token number">3</span>
+            <span class="token result italic">    0</span>
+            <span class="token prompt important">&gt;&gt;&gt;</span> <span class="token number">10</span> <span class="token operator">%</span> <span class="token number">3</span>
+            <span class="token result italic">    1</span>
+
+    </code></pre>
+                </div>
+                <div class="python-col">
+                    <div class="python-col-text">
+
+                        <h2> Integer Division</h2>
+                        <br>
+                        <p>There is one additional wrinkle when it comes to division. Not only is there a way to perform
+                            integer division, but there is also a way to obtain the <i>remainder</i> of that division,
+                            using
+                            the remainder (also called <i>mod</i> or <i>modulo</i>) operator, which is denoted in Python
+                            by
+                            <span class="highlight">%</span>
+                            . What this returns is the remainder left over after
+                            performing an integer division.
+                        </p><br>
+                        <p>Since 6 is divided evenly by 3, there is no remainder, so the result is 0. 7 does not divide
+                            evenly by 3; we can group 3 elements twice and then have 1 left over, so the result is 1.
+                        </p>
+                        <p>At first blush, this seems like a strange operator to include in a programming language. Why
+                            would we ever want the remainder of a division? However, remainders are surprisingly handy,
+                            due to some useful characteristics they have.</p>
+                        <ul>
+                            <li>The remainder is always 0 when the second operand evenly divides the first. If you ever
+                                want to know whether a number <span class="highlight">n</span> is a multiple of 10,
+                                you can simply check if <span class="highlight">n % 10</span> is 0. If you ever want
+                                to know if a number is even, you can check if <span class="highlight">n % 2</span>
+                                is 0. (Note, too, that you can check if a number is odd by checking if <span
+                                    class="highlight">n % 2</span> is 1.)</li>
+                            <li>The remainder of <span class="highlight">n % m</span> always lies between 0 and m -
+                                1, inclusive. This can be used to ensure that values stay within a certain range as you
+                                operate on them, which has all kinds of uses.</li>
+                        </ul>
+
+                    </div>
+                </div>
+
+        </section>
+    </body>
+
+    <section class="arithmetic">
+        <h1>Mixed-mode arithmetic</h1>
+        <br>
+        <hr style="border-top: dotted 1px;" />
+        <br>
+        <p> Python also supports what is often called mixed-mode arithmetic, which is a fancy way of saying that you can
+            perform arithmetic operations on two operands where one is an int and the other is a float. In that case,
+            the int operand is first converted to an equivalent float (e.g., <span class="highlight">14</span> becomes
+            <span class="highlight">14.0</span>), then the operation is
+            performed using the usual rules we've already seen for operations involving two floats.
+
+        </p>
+        <br>
+        <pre class="language-python-shell" tabindex="0">
+    <span class="token prompt important">&gt;&gt;&gt;</span> <span class="token number">5</span> <span class="token operator">*</span> <span class="token number">3.5</span>
+    <span class="token result italic">    17.5</span>
+    <span class="token prompt important">&gt;&gt;&gt;</span> <span class="token number">12.5</span> <span class="token operator">//</span> <span class="token number">3</span>
+    <span class="token result italic">    4.0</span></code></pre>
+
+
+    </section>
+
+    <section class="arithmetic">
+        <h1>Operator precedence, associativity, and parenthesization
+
+        </h1>
+        <br>
+        <hr style="border-top: dotted 1px;" />
+        <br>
+        <p> The arithmetic operators (and all of the others, too) each have a precedence associated with them, with some
+            having a higher precedence than others. In an expression with multiple operators, the operators with higher
+            precedence are evaluated before those with lower precedence. As is typical in algebra, multiplication and
+            division have a higher precedence than addition and subtraction.
+
+        </p><br>
+        <pre class="language-python-shell" tabindex="0">
+    <span class="token prompt important">&gt;&gt;&gt;</span> <span class="token number">3</span> <span class="token operator">+</span> <span class="token number">4</span> <span class="token operator">*</span> <span class="token number">5</span>
+    <span class="token result italic">    23</span></code></pre>
+
+
+    </section>
+
+    <!----- Facilities ------>
+
+    <!-- <section class="facilities">
+        <h1>Our Facilities</h1>
+        <p> yo dfhhf fjseljnf seldfjsend nkjdbjdd</p>
+
+        <div class="row">
+            <div class="facilities-col">
+                <img src="images/library.png">
+                <h3>World Class Library</h3>
+                <p> Lorem ipsum dolor sit amet, cons ectetur adipiscing elit Lorem ipsum dolor sit amet, cons ectetur
+                    adipiscing elit </p>
+            </div>
+            <div class="facilities-col">
+                <img src="images/basketball.png">
+                <h3>World Class Gymnasium</h3>
+                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit </p>
+            </div>
+            <div class="facilities-col">
+                <img src="images/cafeteria.png">
+                <h3>World Class food</h3>
+                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit </p>
+            </div>
+        </div>
+
+
+    </section> -->
+
+
+
+
+    <!----- Footer ------>
+    <section class="footer">
+        <h4> ABOUT US</h4>
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br>
+            Ut enim ad minim veniam </p>
+        <div class="icons">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-linkedin"></i>
+
+        </div>
+        <p>Made With <i class="fa fa-heart-o"></i> by me
+        </p>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!----- JavaScript for Toggle Menu ------>
+    <script>
+
+        var navLinks = document.getElementById("navLinks");
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+
+    </script>
+
+
+</body>
+
+</html>
